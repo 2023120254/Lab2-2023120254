@@ -14,24 +14,24 @@
  * 输出：[0,1,2]
  */
 
-class Solution {
+ class Solution {
     public void sortColors(int[] nums) {
-        int n = nums.length();
-        int ptr = 0
-        for (int i = 0; i < n; ++i) {
-            if (nums(i) == 0) {
-                int temp = nums[i];
-                nums[i] = nums[ptr];
-                nums[ptr] = temp;
-                ++ptr;
-            }
-        }
-        for {int i = ptr; i < n; ++i} {
-            if (nums[i] == 1) {
-                int temp = nums[i];
-                nums[i] = nums[ptr];
-                nums[ptr] = temp;
-                ++ptr;
+        int n = nums.length;
+        int ptr0 = 0; // 指向第一个1的前面
+        int ptr1 = 0; // 指向当前扫描的位置
+        for (int ptr2 = 0; ptr2 < n; ++ptr2) {
+            if (nums[ptr2] == 0) {
+                // 交换 ptr2 和 ptr0 指向的元素
+                int temp = nums[ptr2];
+                nums[ptr2] = nums[ptr0];
+                nums[ptr0] = temp;
+                ++ptr0; // 移动 ptr0
+            } else if (nums[ptr2] == 1) {
+                // 交换 ptr2 和 ptr1 指向的元素
+                int temp = nums[ptr2];
+                nums[ptr2] = nums[ptr1];
+                nums[ptr1] = temp;
+                ++ptr1; // 移动 ptr1
             }
         }
     }
